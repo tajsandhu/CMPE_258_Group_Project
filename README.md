@@ -42,7 +42,7 @@ https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sh
 ### Run
 Assuming virtual environments are named `yolov4-cpu` and `yolov3-env`.
 ```
-# run YOLOv4 to get ROIs
+# run YOLOv4 to get person bounding boxes
 cd tensorflow-yolov4-tflite-master/
 conda activate yolov4-cpu
 python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --images ./data/images/frame0000.jpg
@@ -55,3 +55,6 @@ python Detector.py
 # combine images into a video and show it
 python create_video_from_images.py
 ```
+
+### Architecture
+![architecture diagram](https://github.com/tajsandhu/CMPE_258_Group_Project/blob/yolo-to-get-pose/architecture-draft-pedestrian-behavior-analysis.png)
