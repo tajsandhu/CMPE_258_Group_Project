@@ -32,7 +32,7 @@ python Download_and_Convert_YOLO_weights.py
 python Train_YOLO.py 
 cd ..
 cd 3_Inference
-
+python Detector.py
 ```
 
 More info:
@@ -49,4 +49,6 @@ python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --
 
 cd TrainYourOwnYOLO
 conda activate yolov3-env
+cd 3_Inference
+python Detector.py
 ```
