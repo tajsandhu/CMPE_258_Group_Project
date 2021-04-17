@@ -21,7 +21,7 @@ pip install -r requirements.txt
 python Minimal_Example.py
 ```
 
-Training YOLOv3:
+Training YOLOv3. Activate virtual environment first:
 ```
 cd 1_Image_Annotation
 python Convert_to_YOLO_format.py
@@ -30,6 +30,9 @@ cd ..
 cd 2_Training
 python Download_and_Convert_YOLO_weights.py
 python Train_YOLO.py 
+cd ..
+cd 3_Inference
+
 ```
 
 More info:
