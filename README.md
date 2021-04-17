@@ -51,4 +51,5 @@ cd TrainYourOwnYOLO
 conda activate yolov3-env
 cd 3_Inference
 python Detector.py
+python create_video_from_images.py
 ```
