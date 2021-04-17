@@ -2,8 +2,7 @@
 
 ### Development Instructions
 ##### YOLOv4 object detector
-Use linked README to setup and run pre-trained YOLOv4 in `tensorflow-yolov4-tflite-master`:
-https://github.com/hualili/opencv/blob/master/deep-learning-2020S/20-2021S-7c-%23README-yolo4-v2-yy-hl-2021-4-5%20(copy).txt
+Use [this linked README](https://github.com/hualili/opencv/blob/master/deep-learning-2020S/20-2021S-7c-%23README-yolo4-v2-yy-hl-2021-4-5%20(copy).txt) to setup and run pre-trained YOLOv4 in `tensorflow-yolov4-tflite-master`.
 
 Follow instructions to setup Anaconda environment, 
 download yolov4.weights, 
@@ -11,7 +10,7 @@ and convert the weights from DarkNet to TensorFlow.
 Need to save and convert weights on local computer since the yolov4.weights and checkpoint folder are over 200MB, too large to push. 
 
 ##### YOLOv3 pose detector
-Then follow subfolder README to setup and run YOLOv3 in `TrainYourOwnYOLO`.
+Then follow [subfolder README](https://github.com/tajsandhu/CMPE_258_Group_Project/tree/yolo-to-get-pose/TrainYourOwnYOLO) to setup and run YOLOv3 in `TrainYourOwnYOLO`.
 For example, used conda to create virtual environment `yolov3-env` and `pip install` in the environment to install requirements:
 ```
 cd TrainYourOwnYOLO
@@ -43,13 +42,16 @@ https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sh
 ### Run
 Assuming virtual environments are named `yolov4-cpu` and `yolov3-env`.
 ```
+# run YOLOv4 to get ROIs
 cd tensorflow-yolov4-tflite-master/
 conda activate yolov4-cpu
 python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --images ./data/images/frame0000.jpg
 
+# run YOLOv3 to get images with pose labels
 cd TrainYourOwnYOLO
 conda activate yolov3-env
 cd 3_Inference
 python Detector.py
+# combine images into a video and show it
 python create_video_from_images.py
 ```
