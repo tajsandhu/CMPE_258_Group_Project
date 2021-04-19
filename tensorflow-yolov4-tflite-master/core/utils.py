@@ -40,8 +40,8 @@ bg_img: Background image
 def create_image_centered_in_background(img, bg_img):
     height, width, channels = img.shape
     bg_height, bg_width, channels = bg_img.shape
-    # print("image hwc:", height, width, channels)
-    # print("bg hwc:", bg_height, bg_width, channels)
+    # print("image height, width, channels:", height, width, channels)
+    # print("bg height, width, channels:", bg_height, bg_width, channels)
     # compute xoff and yoff for placement of upper left corner of resized image   
     yoff = round((bg_height-height)/2)
     xoff = round((bg_width-width)/2)
@@ -52,8 +52,7 @@ def create_image_centered_in_background(img, bg_img):
     return result
   
 '''  
-Given an ROI image,
-place it in a square background image.
+Given an ROI image, place it in a square background image.
 image: ROI image
 returns: Square image.
 '''
@@ -69,8 +68,10 @@ def get_resized_image(image):
     keep_aspect_img = create_image_centered_in_background(image, bg_image)
     
     # Create another background square image with 
-    # size 640x640 (max height of entire image)
-    bg_image = create_background_image(640, 640)
+    # size MAX_BG_SIZE, ignore if less than max dim of image
+    MAX_BG_SIZE = 250
+    if maxDim < MAX_BG_SIZE:
+        bg_image = create_background_image(MAX_BG_SIZE, MAX_BG_SIZE)
     
     # Use the ROI and background images' height and width
     # to place ROI image in center of background image.
@@ -86,8 +87,10 @@ x_min: xmin from box coordinates
 x_max: xmax from box coordinates
 y_max: ymax from box coordinates
 ROI_number: ROI image name number
+ROI_FOLDER: Folder path to save images
+RESIZED_ROI_FOLDER: Folder path to save resized images
 '''
-def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_FOLDER, RESIZED_ROI_FOLDER, ROI_number):
+def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_number, ROI_FOLDER="../rois", RESIZED_ROI_FOLDER="../rois_resized"):
   x = x_min
   y = y_min
   w = x_max - x_min
@@ -227,12 +230,8 @@ def image_preprocess(image, target_size, gt_boxes=None):
         return image_paded, gt_boxes
 
 def draw_bbox(image, bboxes, classes=read_class_names(cfg.YOLO.CLASSES), allowed_classes=list(read_class_names(cfg.YOLO.CLASSES).values()), show_label=True):
+    
     # variables used by save_bounding_box_image()
-    # pedestrian-behavior-analysis/rois/
-    ROI_FOLDER = "../rois"
-    # RESIZED_ROI_FOLDER = "../rois_resized"
-    # ROI_FOLDER = "../TrainYourOwnYOLO/Data/Source_Images/Test_Images"
-    RESIZED_ROI_FOLDER = "../TrainYourOwnYOLO/Data/Source_Images/Test_Images"
     ROI_number = 0
     
     num_classes = len(classes)
@@ -270,7 +269,7 @@ def draw_bbox(image, bboxes, classes=read_class_names(cfg.YOLO.CLASSES), allowed
 
             if show_label:
                 # save box images
-                save_bounding_box_image(image, int(coor[1]), int(coor[0]), int(coor[3]), int(coor[2]), ROI_FOLDER, RESIZED_ROI_FOLDER, ROI_number) 
+                save_bounding_box_image(image, int(coor[1]), int(coor[0]), int(coor[3]), int(coor[2]), ROI_number) 
                 ROI_number += 1
                 
                 bbox_mess = '%s: %.2f' % (classes[class_ind], score)
