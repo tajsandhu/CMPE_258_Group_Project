@@ -1,14 +1,15 @@
 import cv2
 import os
 
-# combine all .jpg files from detection results folder into a video.
+# combine all files from detection results folder into a video.
 # then display the video.
 
-image_folder = '../Data/Source_Images/Test_Image_Detection_Results'
-video_name = '../video.avi'
+image_folder = "../Data/Source_Images/Test_Image_Detection_Results"
+extension = ".png" # ".jpg"
+video_name = "../video.avi"
 WAIT_TIME_IN_MS = 1000
 
-images = [img for img in os.listdir(image_folder) if img.endswith(".jpg")]
+images = [img for img in os.listdir(image_folder) if img.endswith(extension)]
 frame = cv2.imread(os.path.join(image_folder, images[0]))
 height, width, layers = frame.shape
 

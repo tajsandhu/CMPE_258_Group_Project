@@ -21,24 +21,90 @@ from core.config import cfg
 
 # START new functions
 '''
+Create black background image.
+bg_height: Background image height
+bg_width: Background image width
+Returns: A background image which has 3 channel, meaning RGB image
+'''
+def create_background_image(bg_height, bg_width):
+    # black bg
+    return np.zeros((bg_height, bg_width, 3), dtype = "uint8")
+    
+'''
+Place an image in center of a background image
+preconditon: The images have 3 channels, meaning RGB.
+The background image is larger than the image to be centered.
+img: The image to place in center
+bg_img: Background image
+'''
+def create_image_centered_in_background(img, bg_img):
+    height, width, channels = img.shape
+    bg_height, bg_width, channels = bg_img.shape
+    # print("image hwc:", height, width, channels)
+    # print("bg hwc:", bg_height, bg_width, channels)
+    # compute xoff and yoff for placement of upper left corner of resized image   
+    yoff = round((bg_height-height)/2)
+    xoff = round((bg_width-width)/2)
+
+    # use numpy indexing to place the resized image in the center of background image
+    result = bg_img.copy()
+    result[yoff:yoff+height, xoff:xoff+width] = img
+    return result
+  
+'''  
+Given an ROI image,
+place it in a square background image.
+image: ROI image
+returns: Square image.
+'''
+def get_resized_image(image):
+    # Keep aspect ratio
+    # by creating intial background image with ROI image's max dimension,
+    # then placing ROI in center of that image
+    height, width, channels = image.shape
+    maxDim = max(height, width)
+    # Create background square image
+    bg_image = create_background_image(maxDim, maxDim)
+    # place ROI image in center of background image
+    keep_aspect_img = create_image_centered_in_background(image, bg_image)
+    
+    # Create another background square image with 
+    # size 640x640 (max height of entire image)
+    bg_image = create_background_image(640, 640)
+    
+    # Use the ROI and background images' height and width
+    # to place ROI image in center of background image.
+    result = create_image_centered_in_background(image, bg_image)
+
+    return result    
+    
+'''
 Create a ROI image cropped from given image using OpenCV and bounding box coordinates
-precondition: ROI_FOLDER exists
+precondition: ROI_FOLDER and RESIZED_ROI_FOLDER exists
 img: Original image
 x_min: xmin from box coordinates
 x_max: xmax from box coordinates
 y_max: ymax from box coordinates
 ROI_number: ROI image name number
 '''
-def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_FOLDER, ROI_number):
+def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_FOLDER, RESIZED_ROI_FOLDER, ROI_number):
   x = x_min
   y = y_min
   w = x_max - x_min
   h = y_max - y_min
   ROI = img[y:y+h, x:x+w]
+  
+  resized_ROI = get_resized_image(ROI)
+  
   # Save ROI image
   roi_path = ROI_FOLDER + "/ROI_{}.png".format(ROI_number)
   cv2.imwrite(roi_path, ROI)
   print("saved " + roi_path)
+  # Save resized ROI image
+  resized_roi_path = RESIZED_ROI_FOLDER + "/ROI_{}.png".format(ROI_number)
+  cv2.imwrite(resized_roi_path, resized_ROI)
+  print("saved " + resized_roi_path)
+  
 # END new functions
 
 def load_freeze_layer(model='yolov4', tiny=False):
@@ -164,6 +230,9 @@ def draw_bbox(image, bboxes, classes=read_class_names(cfg.YOLO.CLASSES), allowed
     # variables used by save_bounding_box_image()
     # pedestrian-behavior-analysis/rois/
     ROI_FOLDER = "../rois"
+    # RESIZED_ROI_FOLDER = "../rois_resized"
+    # ROI_FOLDER = "../TrainYourOwnYOLO/Data/Source_Images/Test_Images"
+    RESIZED_ROI_FOLDER = "../TrainYourOwnYOLO/Data/Source_Images/Test_Images"
     ROI_number = 0
     
     num_classes = len(classes)
@@ -201,7 +270,7 @@ def draw_bbox(image, bboxes, classes=read_class_names(cfg.YOLO.CLASSES), allowed
 
             if show_label:
                 # save box images
-                save_bounding_box_image(image, int(coor[1]), int(coor[0]), int(coor[3]), int(coor[2]), ROI_FOLDER, ROI_number) 
+                save_bounding_box_image(image, int(coor[1]), int(coor[0]), int(coor[3]), int(coor[2]), ROI_FOLDER, RESIZED_ROI_FOLDER, ROI_number) 
                 ROI_number += 1
                 
                 bbox_mess = '%s: %.2f' % (classes[class_ind], score)
