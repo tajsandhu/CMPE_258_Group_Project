@@ -13,7 +13,7 @@ WAIT_TIME_IN_MS = 1000
 '''
 Create a video.
 '''
-create_video():
+def create_video():
     images = [img for img in os.listdir(image_folder) if img.endswith(extension)]
     frame = cv2.imread(os.path.join(image_folder, images[0]))
     height, width, layers = frame.shape
@@ -29,7 +29,7 @@ create_video():
 '''
 Display the video.
 '''
-display_video():
+def display_video():
     cap = cv2.VideoCapture(video_name)
 
     while(cap.isOpened()):

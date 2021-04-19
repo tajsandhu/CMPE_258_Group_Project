@@ -85,28 +85,27 @@ x_min: xmin from box coordinates
 x_max: xmax from box coordinates
 y_max: ymax from box coordinates
 '''
-def get_ROI_with_background(image, x_min, y_min, x_max, y_max):
-    height, width, channels = image.shape
-    # BG_PADDING = 100
-    BG_PADDING = 20
-    if x_min - BG_PADDING > 0:
-        x_min = x_min - BG_PADDING
-    else:
-        x_min = 0
-    if y_min - BG_PADDING > 0:
-        y_min = y_min - BG_PADDING
-    else:
-        y_min = 0
+# def get_ROI_with_background(image, x_min, y_min, x_max, y_max):
+    # height, width, channels = image.shape
+    # BG_PADDING = 20
+    # if x_min - BG_PADDING > 0:
+        # x_min = x_min - BG_PADDING
+    # else:
+        # x_min = 0
+    # if y_min - BG_PADDING > 0:
+        # y_min = y_min - BG_PADDING
+    # else:
+        # y_min = 0
         
-    if x_max + BG_PADDING < width:
-        x_max = x_max + BG_PADDING
-    else:
-        x_max = width-1
-    if y_max + BG_PADDING < height:
-        y_max = y_max + BG_PADDING
-    else:
-        y_max = height-1
-    return image[y_min:y_max, x_min:x_max]
+    # if x_max + BG_PADDING < width:
+        # x_max = x_max + BG_PADDING
+    # else:
+        # x_max = width-1
+    # if y_max + BG_PADDING < height:
+        # y_max = y_max + BG_PADDING
+    # else:
+        # y_max = height-1
+    # return image[y_min:y_max, x_min:x_max]
     
 '''
 Create a ROI image cropped from given image using OpenCV and bounding box coordinates
@@ -125,10 +124,10 @@ def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_number, ROI_FOL
   
   # Get ROI with surrounding parts of image
   # to try improve pose detection accuracy later
-  ROI_with_background = get_ROI_with_background(img, x_min, y_min, x_max, y_max)
-  resized_ROI = get_resized_image(ROI_with_background)
+  # ROI_with_background = get_ROI_with_background(img, x_min, y_min, x_max, y_max)
+  # resized_ROI = get_resized_image(ROI_with_background)
   
-  # resized_ROI = get_resized_image(ROI)
+  resized_ROI = get_resized_image(ROI)
   
   # Save ROI image
   roi_path = ROI_FOLDER + "/ROI_{}.png".format(ROI_number)
