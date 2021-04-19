@@ -1,0 +1,52 @@
+{
+    "name": "Annotations",
+    "securityToken": "Annotations Token",
+    "sourceConnection": {
+        "name": "Images",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMWMzMGJmN2E2NTA1YzJlZTcwMjEwM2E0MGQ1MDA5OTNkNDBmZDZkODVkZDhlMjU1NzM0NzFiYzZlMGVjMGFkMGFhMzI2NmYyNDFhZGM4ODRjMDAwMmNlYWQ0ZmU3NTliOGFjYzQ5ZWJjNGE0ZWNiYTVlYzc2ZjQ3NjA3YzFhYWYzOWJiMTk0Y2U4YjZhZDkyNTU3NjkzMTNkMWQzNTEzNTY0MjU5MGQ3YTUwODg2ZWQ5MDZlYTQzZDRkY2U4M2M1OTQ3OGRlZWY1MDgzODRhOGU0OTVhMTRjYzQ3NDU3ZjJjNzkwNGIxYWY2MWU0N2YyZDM4MmExMjIyMDg4YzA0NyIsIml2IjoiOWNjNTFmYjE1YWFjOTU4ZTMxODQ5Y2EzMmVhMWM2YTM1MTllNmUyYjJlOTUwZDMxIn0="
+        },
+        "id": "Ii6PKfePE"
+    },
+    "targetConnection": {
+        "name": "Images",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiOWVmOGEyZThkNWE3ZTdmZTVjZmVkZjJmZjhhZWNjZmVlZGI0Njg2MzhlZDhlYjdjMDk5OGY0ZGNkMjUxODhhN2I2YWI1OWY3ZGIwNTFjZGMyYTgwZjljOWQzNmEwNDBkMjJmNTUzYTAxODc0MzJiYzI4NmNiNGNmZWNiZTFjNGNkZDUzNGU5NjdkMTM2NGUzNGM4Y2M2ZjE2ZjI1NGY1NWEzN2Y0MWNiMzEyNTU2Njg0ZTRiZGIxN2VhNTMxMGY2YTZlYjE1Y2M2ZmQ5ZjgxM2VkMzUwYzYwZDBjMTE4ZmFlNDljYTJlNDZlN2JmMmYzZjQ0NzUwZWU2YTI2YTgyYiIsIml2IjoiOTZhOGFlNGU1NWY2Y2YxNzU2ZTYxNzAyYWI2NmJkZWQ5MjUyMDFmYjllNWU4YTFlIn0="
+        },
+        "id": "Ii6PKfePE"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [],
+    "id": "SOEgES2XO",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "csv",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYjcxZmU2NWM4MzAzOWY1ZjMwYWY0NDA2MDUwNGZhZGU1ZWE3MDAyMDk4YThhZWUzYWYzYjhkMmVjYWY3YzdmYjQwNjNhZWQwMDRkMTc4ZDlkMmY5NDlmMGZmOGExODY4IiwiaXYiOiJhODA3MTRlMzMyZDUwODFjMmZkNTE2Mzk5OTljOTJmYzk3YjJmZDRlOTM4Mjc2OTAifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "b375043c22cdd518b7a5becb794059b5",
+    "assets": {
+        "b375043c22cdd518b7a5becb794059b5": {
+            "format": "jpg",
+            "id": "b375043c22cdd518b7a5becb794059b5",
+            "name": "000575866.jpg",
+            "path": "file:C:/Users/mdhsi/OneDrive/Documents/Github/CMPE_258_Group_Project/activities-dataset/activities/000575866.jpg",
+            "size": {
+                "width": 1920,
+                "height": 1080
+            },
+            "state": 1,
+            "type": 1
+        }
+    }
+}
