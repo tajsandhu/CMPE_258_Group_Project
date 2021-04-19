@@ -40,8 +40,6 @@ bg_img: Background image
 def create_image_centered_in_background(img, bg_img):
     height, width, channels = img.shape
     bg_height, bg_width, channels = bg_img.shape
-    # print("image height, width, channels:", height, width, channels)
-    # print("bg height, width, channels:", bg_height, bg_width, channels)
     # compute xoff and yoff for placement of upper left corner of resized image   
     yoff = round((bg_height-height)/2)
     xoff = round((bg_width-width)/2)
@@ -69,8 +67,7 @@ def get_resized_image(image):
     
     # Create another background square image with 
     # size MAX_BG_SIZE, ignore if less than max dim of image
-    # MAX_BG_SIZE = 250
-    MAX_BG_SIZE = 640
+    MAX_BG_SIZE = 250
     if maxDim < MAX_BG_SIZE:
         bg_image = create_background_image(MAX_BG_SIZE, MAX_BG_SIZE)
     
@@ -82,6 +79,7 @@ def get_resized_image(image):
 
 '''
 Get ROI with surrounding parts of image, of size BG_PADDING.
+Add to top, bottom, left, right.
 img: Original image
 x_min: xmin from box coordinates
 x_max: xmax from box coordinates
@@ -89,7 +87,8 @@ y_max: ymax from box coordinates
 '''
 def get_ROI_with_background(image, x_min, y_min, x_max, y_max):
     height, width, channels = image.shape
-    BG_PADDING = 100
+    # BG_PADDING = 100
+    BG_PADDING = 20
     if x_min - BG_PADDING > 0:
         x_min = x_min - BG_PADDING
     else:
@@ -119,13 +118,13 @@ y_max: ymax from box coordinates
 ROI_number: ROI image name number
 ROI_FOLDER: Folder path to save images
 RESIZED_ROI_FOLDER: Folder path to save resized images
+TEST_IMAGES_FOLDER: Folder path to save test images
 '''
-def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_number, ROI_FOLDER="../rois", RESIZED_ROI_FOLDER="../rois_resized"):
+def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_number, ROI_FOLDER="../rois", RESIZED_ROI_FOLDER="../rois_resized", TEST_IMAGES_FOLDER="../TrainYourOwnYOLO/Data/Source_Images/Test_Images"):
   ROI = img[y_min:y_max, x_min:x_max]
   
   # Get ROI with surrounding parts of image
   # to try improve pose detection accuracy later
-  # ROI_with_background = get_ROI_with_background(img, height, width, x_min, y_min, x_max, y_max)
   ROI_with_background = get_ROI_with_background(img, x_min, y_min, x_max, y_max)
   resized_ROI = get_resized_image(ROI_with_background)
   
@@ -139,6 +138,10 @@ def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_number, ROI_FOL
   resized_roi_path = RESIZED_ROI_FOLDER + "/ROI_{}.png".format(ROI_number)
   cv2.imwrite(resized_roi_path, resized_ROI)
   print("saved " + resized_roi_path)
+  # Now save resized ROI image in test images folder
+  test_images_path = TEST_IMAGES_FOLDER + "/ROI_{}.png".format(ROI_number)
+  cv2.imwrite(test_images_path, resized_ROI)
+  print("saved " + test_images_path)
   
 # END new functions
 

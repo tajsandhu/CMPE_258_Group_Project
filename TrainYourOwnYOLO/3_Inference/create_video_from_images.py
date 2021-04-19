@@ -3,6 +3,7 @@ import os
 
 # combine all files from detection results folder into a video.
 # then display the video.
+# All files must be the same size.
 
 image_folder = "../Data/Source_Images/Test_Image_Detection_Results"
 extension = ".png" # ".jpg"
