@@ -58,7 +58,7 @@ returns: Square image.
 '''
 def get_resized_image(image):
     # Keep aspect ratio
-    # by creating intial background image with ROI image's max dimension,
+    # by creating initial background image with ROI image's max dimension,
     # then placing ROI in center of that image
     height, width, channels = image.shape
     maxDim = max(height, width)
@@ -69,7 +69,8 @@ def get_resized_image(image):
     
     # Create another background square image with 
     # size MAX_BG_SIZE, ignore if less than max dim of image
-    MAX_BG_SIZE = 250
+    # MAX_BG_SIZE = 250
+    MAX_BG_SIZE = 640
     if maxDim < MAX_BG_SIZE:
         bg_image = create_background_image(MAX_BG_SIZE, MAX_BG_SIZE)
     
@@ -77,7 +78,36 @@ def get_resized_image(image):
     # to place ROI image in center of background image.
     result = create_image_centered_in_background(image, bg_image)
 
-    return result    
+    return result 
+
+'''
+Get ROI with surrounding parts of image, of size BG_PADDING.
+img: Original image
+x_min: xmin from box coordinates
+x_max: xmax from box coordinates
+y_max: ymax from box coordinates
+'''
+def get_ROI_with_background(image, x_min, y_min, x_max, y_max):
+    height, width, channels = image.shape
+    BG_PADDING = 100
+    if x_min - BG_PADDING > 0:
+        x_min = x_min - BG_PADDING
+    else:
+        x_min = 0
+    if y_min - BG_PADDING > 0:
+        y_min = y_min - BG_PADDING
+    else:
+        y_min = 0
+        
+    if x_max + BG_PADDING < width:
+        x_max = x_max + BG_PADDING
+    else:
+        x_max = width-1
+    if y_max + BG_PADDING < height:
+        y_max = y_max + BG_PADDING
+    else:
+        y_max = height-1
+    return image[y_min:y_max, x_min:x_max]
     
 '''
 Create a ROI image cropped from given image using OpenCV and bounding box coordinates
@@ -91,13 +121,15 @@ ROI_FOLDER: Folder path to save images
 RESIZED_ROI_FOLDER: Folder path to save resized images
 '''
 def save_bounding_box_image(img, x_min, y_min, x_max, y_max, ROI_number, ROI_FOLDER="../rois", RESIZED_ROI_FOLDER="../rois_resized"):
-  x = x_min
-  y = y_min
-  w = x_max - x_min
-  h = y_max - y_min
-  ROI = img[y:y+h, x:x+w]
+  ROI = img[y_min:y_max, x_min:x_max]
   
-  resized_ROI = get_resized_image(ROI)
+  # Get ROI with surrounding parts of image
+  # to try improve pose detection accuracy later
+  # ROI_with_background = get_ROI_with_background(img, height, width, x_min, y_min, x_max, y_max)
+  ROI_with_background = get_ROI_with_background(img, x_min, y_min, x_max, y_max)
+  resized_ROI = get_resized_image(ROI_with_background)
+  
+  # resized_ROI = get_resized_image(ROI)
   
   # Save ROI image
   roi_path = ROI_FOLDER + "/ROI_{}.png".format(ROI_number)
@@ -262,16 +294,16 @@ def draw_bbox(image, bboxes, classes=read_class_names(cfg.YOLO.CLASSES), allowed
         if class_name not in allowed_classes:
             continue
         else:
+            # save box images
+            save_bounding_box_image(image, int(coor[1]), int(coor[0]), int(coor[3]), int(coor[2]), ROI_number) 
+            ROI_number += 1
+        
             bbox_color = colors[class_ind]
             bbox_thick = int(0.6 * (image_h + image_w) / 600)
             c1, c2 = (coor[1], coor[0]), (coor[3], coor[2])
             cv2.rectangle(image, c1, c2, bbox_color, bbox_thick)
 
             if show_label:
-                # save box images
-                save_bounding_box_image(image, int(coor[1]), int(coor[0]), int(coor[3]), int(coor[2]), ROI_number) 
-                ROI_number += 1
-                
                 bbox_mess = '%s: %.2f' % (classes[class_ind], score)
                 t_size = cv2.getTextSize(bbox_mess, 0, fontScale, thickness=bbox_thick // 2)[0]
                 c3 = (c1[0] + t_size[0], c1[1] - t_size[1] - 3)
