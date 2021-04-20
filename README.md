@@ -17,6 +17,11 @@ python Detector.py
 python create_video_from_images.py
 ```
 
+### Results
+Graph, video, and detected image results can be found in `results` folder.
+View graphs in TensorBoard.dev:
+[YOLOv3 training on initial human-pose-dataset](https://tensorboard.dev/experiment/sJyULVIYTXqtNboXkLK2Ag/)
+
 ### Development Instructions
 ##### YOLOv4 object detector
 Use [this linked README](https://github.com/hualili/opencv/blob/master/deep-learning-2020S/20-2021S-7c-%23README-yolo4-v2-yy-hl-2021-4-5%20(copy).txt) to setup and run pre-trained YOLOv4 in `tensorflow-yolov4-tflite-master`.
@@ -36,6 +41,10 @@ conda activate yolov3-env
 pip install -r requirements.txt
 python Minimal_Example.py
 ```
+
+Download the folder `activities-dataset`, which is manually annotated with bounding boxes and used to train YOLOv3. This has more images than `human-pose-dataset` but is over 130MB, too large to push.
+Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing) and place in main folder of this repo.
+So the path should be `CMPE_258_Group_Project/activities-dataset`.
 
 Training YOLOv3. Activate virtual environment first:
 ```
