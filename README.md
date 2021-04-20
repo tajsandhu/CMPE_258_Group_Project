@@ -2,7 +2,7 @@
 
 ### Run
 Assuming virtual environments are named `yolov4-cpu` and `yolov3-env`.
-Label poses of people in `tensorflow-yolov4-tflite-master//data/images/frame0000.jpg`
+Label poses of people in `tensorflow-yolov4-tflite-master/data/images/frame0000.jpg`
 ```
 # run YOLOv4 to get person bounding boxes
 cd tensorflow-yolov4-tflite-master/
@@ -20,8 +20,9 @@ python create_video_from_images.py
 
 ### Results
 Graph, video, and detected image results can be found in `results` folder.
+
 View graphs in TensorBoard.dev:
-[YOLOv3 training on images in human-pose-dataset](https://tensorboard.dev/experiment/sJyULVIYTXqtNboXkLK2Ag/)
+- [YOLOv3 training on images in human-pose-dataset](https://tensorboard.dev/experiment/sJyULVIYTXqtNboXkLK2Ag/)
 
 ### Development Instructions
 ##### YOLOv4 object detector
@@ -42,7 +43,7 @@ conda activate yolov3-env
 pip install -r requirements.txt
 python Minimal_Example.py
 ```
-######## Download dataset
+###### Download dataset
 The folder `human-pose-dataset` has 100 thumbnail images of size 100x150px.
 These are very small and were used to initially train YOLOv3 and check the model could be run successfully.
 
@@ -51,12 +52,15 @@ This has more images than `human-pose-dataset` but is over 130MB, too large to p
 Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing) and place in main folder of this repo.
 So the path should be `CMPE_258_Group_Project/activities-dataset`.
 
-######## Copy YOLOv3 training CSV file
+###### Copy YOLOv3 training CSV file and images
 Copy folder `vott-csv-export` from dataset and paste in `TrainYourOwnYOLO/Data/Source_Images/Training_Images`.
 
-######## Training YOLOv3.
-Activate virtual environment first:
+###### Training YOLOv3.
 ```
+# make sure in right folder and activate virtual environment first
+cd TrainYourOwnYOLO
+conda activate yolov3-env
+
 cd 1_Image_Annotation
 python Convert_to_YOLO_format.py
 
@@ -69,7 +73,7 @@ cd 3_Inference
 python Detector.py
 ```
 
-######## More info:
+###### More info:
 - changed `tensorflow-yolov4-tflite-master/core/utils.py` to get bounding box images of person class only
 - example Colab detecting person, getting box images, and running pose detector to label poses:
 https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sharing
