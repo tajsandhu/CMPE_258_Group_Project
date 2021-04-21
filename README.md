@@ -81,4 +81,4 @@ python Detector.py
 https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sharing
 
 ### Architecture
-![architecture diagram](https://github.com/tajsandhu/CMPE_258_Group_Project/blob/yolo-to-get-pose/architecture-draft-pedestrian-behavior-analysis.png)
+![architecture diagram](https://github.com/tajsandhu/CMPE_258_Group_Project/blob/yolo-to-get-pose/architecture-pedestrian-behavior-analysis.png)
