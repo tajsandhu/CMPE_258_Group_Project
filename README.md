@@ -61,6 +61,7 @@ Copy folder `vott-csv-export` from dataset and paste in `TrainYourOwnYOLO/Data/S
 cd TrainYourOwnYOLO
 conda activate yolov3-env
 
+# convert the VoTT csv format to the YOLOv3 format
 cd 1_Image_Annotation
 python Convert_to_YOLO_format.py
 
