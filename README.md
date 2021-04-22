@@ -17,6 +17,12 @@ python Detector.py
 # combine images into a video and show it
 python create_video_from_images.py
 ```
+## Output
+You should get the following output:
+- individual person boxes (ROIs) in `rois` folder
+- processed ROIs in `rois_resized` and `TrainYourOwnYOLO/Data/Test_Images` folders
+- detection results in `TrainYourOwnYOLO/Data/Source_Images/Test_Image_Detection_Results`
+- results combined in a video in `TrainYourOwnYOLO/video.avi`
 
 ## Results
 Graph, video, and detected image results can be found in [results](results) folder.
