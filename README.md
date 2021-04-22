@@ -19,7 +19,7 @@ python create_video_from_images.py
 ```
 
 ## Results
-Graph, video, and detected image results can be found in [results](https://github.com/tajsandhu/CMPE_258_Group_Project/tree/yolo-to-get-pose/results) folder.
+Graph, video, and detected image results can be found in [results](results) folder.
 
 View graphs in TensorBoard.dev:
 - [YOLOv3 training on images in human-pose-dataset](https://tensorboard.dev/experiment/sJyULVIYTXqtNboXkLK2Ag/)
