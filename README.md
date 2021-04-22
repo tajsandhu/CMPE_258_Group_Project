@@ -58,8 +58,7 @@ These were very small and were used to initially train YOLOv3 and check the mode
 
 The folder `activities-dataset` is manually annotated with bounding boxes and used to train YOLOv3. 
 This has more, larger images than `human-pose-dataset` but is over 130MB, too large to push to remote repo.
-Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing) and place in main folder of this repo.
-So the path should be `CMPE_258_Group_Project/activities-dataset`.
+Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing).
 
 ##### Copy YOLOv3 training CSV file and images
 Copy folder `vott-csv-export` from dataset and paste in `TrainYourOwnYOLO/Data/Source_Images/Training_Images`.
