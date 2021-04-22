@@ -45,13 +45,13 @@ pip install -r requirements.txt
 python Minimal_Example.py
 ```
 ##### Download dataset
-There were 2 datasets.
+There were 2 datasets. They were both subsets of the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview).
 
-The folder `human-pose-dataset` has 100 thumbnail images of size 100x150px.
-These are very small and were used to initially train YOLOv3 and check the model could be run successfully.
+The folder `human-pose-dataset` had 100 thumbnail images of size 100x150px.
+These were very small and were used to initially train YOLOv3 and check the model could be run successfully.
 
 The folder `activities-dataset` is manually annotated with bounding boxes and used to train YOLOv3. 
-This has more images than `human-pose-dataset` but is over 130MB, too large to push.
+This has more, larger images than `human-pose-dataset` but is over 130MB, too large to push to remote repo.
 Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing) and place in main folder of this repo.
 So the path should be `CMPE_258_Group_Project/activities-dataset`.
 
