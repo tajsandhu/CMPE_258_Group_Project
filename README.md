@@ -35,7 +35,7 @@ and convert the weights from DarkNet to TensorFlow.
 Need to save and convert weights on local computer since the yolov4.weights and checkpoint folder are over 200MB, too large to push. 
 
 #### YOLOv3 pose detector
-Then follow [subfolder README](https://github.com/tajsandhu/CMPE_258_Group_Project/tree/main/TrainYourOwnYOLO) to setup and run YOLOv3 in `TrainYourOwnYOLO`.
+Then follow [subfolder README](TrainYourOwnYOLO) to setup and run YOLOv3 in `TrainYourOwnYOLO`.
 For example, used conda to create virtual environment `yolov3-env` and `pip install` in the environment to install requirements:
 ```
 cd TrainYourOwnYOLO
@@ -45,10 +45,12 @@ pip install -r requirements.txt
 python Minimal_Example.py
 ```
 ##### Download dataset
+There were 2 datasets.
+
 The folder `human-pose-dataset` has 100 thumbnail images of size 100x150px.
 These are very small and were used to initially train YOLOv3 and check the model could be run successfully.
 
-Download the folder `activities-dataset`, which is manually annotated with bounding boxes and used to train YOLOv3. 
+The folder `activities-dataset` is manually annotated with bounding boxes and used to train YOLOv3. 
 This has more images than `human-pose-dataset` but is over 130MB, too large to push.
 Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing) and place in main folder of this repo.
 So the path should be `CMPE_258_Group_Project/activities-dataset`.
@@ -58,8 +60,8 @@ Copy folder `vott-csv-export` from dataset and paste in `TrainYourOwnYOLO/Data/S
 
 ##### Download trained YOLOv3 model
 Download a folder with trained YOLOv3 model from links below, unzip, and replace `TrainYourOwnYOLO/Data/Model_Weights` with it.
-- (trained on human-pose-dataset)[https://drive.google.com/file/d/1aGXVj0ouWpKGCbpwCSe632QsrhuN8U8x/view?usp=sharing]
-- (trained on activities-dataset)[https://drive.google.com/file/d/1ABMsxLCVtqVHHdSw3DS-SUrR25YIc-dG/view?usp=sharing]
+- [trained on human-pose-dataset](https://drive.google.com/file/d/1aGXVj0ouWpKGCbpwCSe632QsrhuN8U8x/view?usp=sharing)
+- [trained on activities-dataset](https://drive.google.com/file/d/1ABMsxLCVtqVHHdSw3DS-SUrR25YIc-dG/view?usp=sharing)
 
 If want to train manually, follow [training instructions](yolov3-training.txt)
 
