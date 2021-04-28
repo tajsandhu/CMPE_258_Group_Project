@@ -21,7 +21,7 @@ python Minimal_Example.py
 ```
 ##### Download dataset
 The folder `activities-dataset` is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
-It is manually annotated with bounding boxes and used to train YOLOv3. 
+It is labeled with bounding boxes and used to train YOLOv3. 
 Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing).
 
 ##### Copy YOLOv3 training CSV file and images
