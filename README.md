@@ -26,7 +26,7 @@ Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBAp
 
 ##### Copy YOLOv3 training CSV file and images
 Copy folder `vott-csv-export` from the unzipped folder and paste in `TrainYourOwnYOLO/Data/Source_Images/Training_Images`.
-Change `data_train.txt` path to your own computer's path if error occurs when running.
+Change `data_train.txt` image paths to your own computer's paths if error occurs when running.
 
 ##### Download trained YOLOv3 model
 Download the folder with trained YOLOv3 model from link below, unzip, and replace `TrainYourOwnYOLO/Data/Model_Weights` with it.
