@@ -20,6 +20,15 @@ pip install -r requirements.txt
 python Minimal_Example.py
 ```
 ##### Download dataset
+The folder `Activities.v4-activitiesset2.0.yolokeras` is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
+It is labeled with bounding boxes using [Roboflow exported as Keras YOLO txt format](https://roboflow.com/formats/yolo-keras-txt) 
+The dataset is also available in [this folder](https://drive.google.com/file/d/1eRMz4SQCKbh0yGwTJuZb_PUUbjPxv_U2/view).
+
+It is used to train YOLOv3.
+
+##### Copy dataset text files and images to YOLOv3 folder
+
+---
 The folder `activities-dataset` is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
 It is labeled with bounding boxes and used to train YOLOv3. 
 Unzip [this folder](https://drive.google.com/file/d/17bsXYzBf6PhBrvgWAe0m-vhhBApgE8ys/view?usp=sharing).
