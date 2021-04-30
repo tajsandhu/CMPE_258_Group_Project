@@ -28,7 +28,7 @@ Assuming virtual environment was created named `yolov3-env`.
 Label poses of people in `TrainYourOwnYOLO/Data/Source_Images/Test_Images`.
 ```
 # run YOLOv3 to get images with pose labels
-cd ../TrainYourOwnYOLO
+cd TrainYourOwnYOLO
 conda activate yolov3-env
 cd 3_Inference
 python Detector.py
@@ -61,7 +61,7 @@ Run the script.
 This creates a new file `data_train.txt` and prepends the absolute path of the train images folder to each line of the file.
 5. Delete `_annotations.txt` since it's no longer needed.
 
-Then follow [training instructions](yolov3-training.txt)
+Then follow [these training instructions](yolov3-training.txt).
 
 ##### More info:
 - [example Colab](https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sharing) detecting person, getting box images, and running pose detector to label poses.
