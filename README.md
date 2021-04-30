@@ -20,7 +20,8 @@ Download the folder with trained YOLOv3 model from link below, unzip, and replac
 The folder [Activities.v4-activitiesset2.0.yolokeras](Activities.v4-activitiesset2.0.yolokeras) is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
 It is labeled with bounding boxes using [Roboflow exported as Keras YOLO txt format](https://roboflow.com/formats/yolo-keras-txt) 
 
-Copy-paste test folder images into `CMPE_258_Group_Project/TrainYourOwnYOLO/Data/Source_Images/Test_Images`.
+Create a new folder `CMPE_258_Group_Project/TrainYourOwnYOLO/Data/Source_Images/Test_Images`.
+Copy-paste test folder images into it.
 
 ## Run
 Assuming virtual environment was created named `yolov3-env`.
