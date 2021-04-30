@@ -21,7 +21,7 @@ The folder [Activities.v4-activitiesset2.0.yolokeras](Activities.v4-activitiesse
 It is labeled with bounding boxes using [Roboflow exported as Keras YOLO txt format](https://roboflow.com/formats/yolo-keras-txt).
 
 Create a new folder `TrainYourOwnYOLO/Data/Source_Images/Test_Images`.
-Copy-paste test folder images into it.
+Copy-paste `test` folder images into it.
 
 ## Run
 Assuming virtual environment was created named `yolov3-env`.
@@ -64,7 +64,6 @@ This creates a new file `data_train.txt` and prepends the absolute path of the t
 Then follow [training instructions](yolov3-training.txt)
 
 ##### More info:
-- changed `tensorflow-yolov4-tflite-master/core/utils.py` to get bounding box images of person class only
 - [example Colab](https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sharing) detecting person, getting box images, and running pose detector to label poses.
 
 ## Architecture
