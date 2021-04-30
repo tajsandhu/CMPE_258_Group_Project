@@ -36,7 +36,7 @@ This creates a new file `data_train.txt` and prepends the absolute path of the t
 
 ##### Download trained YOLOv3 model
 Download the folder with trained YOLOv3 model from link below, unzip, and replace `TrainYourOwnYOLO/Data/Model_Weights` with it.
-- [trained on Activities.v4-activitiesset2.0.yolokeras]()
+- [trained on Activities.v4-activitiesset2.0.yolokeras](https://drive.google.com/file/d/1a4IKpRl0rWFes_2PTynfUuweXAc5w8Ex/view?usp=sharing)
 
 ---
 The folder `activities-dataset` is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
