@@ -27,6 +27,16 @@ The dataset is also available in [this folder](https://drive.google.com/file/d/1
 It is used to train YOLOv3.
 
 ##### Copy dataset text files and images to YOLOv3 folder
+1. Copy-paste `train` folder into `TrainYourOwnYOLO/Data/Source_Images/Training_Images`
+2. Rename the `train` folder to `vott-csv-export`.
+3. Rename `_classes.txt` to `data_classes.txt` and move into the folder `TrainYourOwnYOLO/Data/Model_Weights`.
+4. Run the script `prepend-absolute-path-to-data-train`.
+This creates a new file `data_train.txt` and prepends the absolute path of the train images folder to each line of the file.
+5. Delete `_annotations.txt`
+
+##### Download trained YOLOv3 model
+Download the folder with trained YOLOv3 model from link below, unzip, and replace `TrainYourOwnYOLO/Data/Model_Weights` with it.
+- [trained on Activities.v4-activitiesset2.0.yolokeras]()
 
 ---
 The folder `activities-dataset` is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
@@ -40,6 +50,7 @@ Change `data_train.txt` image paths to your own computer's paths if error occurs
 ##### Download trained YOLOv3 model
 Download the folder with trained YOLOv3 model from link below, unzip, and replace `TrainYourOwnYOLO/Data/Model_Weights` with it.
 - [trained on activities-dataset](https://drive.google.com/file/d/1ABMsxLCVtqVHHdSw3DS-SUrR25YIc-dG/view?usp=sharing)
+---
 
 ## Run
 Assuming virtual environments were created and named `yolov4-cpu` and `yolov3-env`.
