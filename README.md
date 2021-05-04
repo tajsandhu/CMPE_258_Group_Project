@@ -85,6 +85,10 @@ Then ran script:
 Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504104439`
 Copied these files into `input/detection-results/`
 
+Ran script to intersect ground-truth and detection-results files,
+in case YOLO misses some images entirely:
+`python intersect-gt-and-dr.py`
+
 Then ran mAP main script:
 `cd mAP`
 `python main.py`
