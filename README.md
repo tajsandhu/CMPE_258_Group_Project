@@ -63,6 +63,31 @@ This creates a new file `data_train.txt` and prepends the absolute path of the t
 
 Then follow [these training instructions](yolov3-training.txt).
 
+### Calculate mAP:
+These were the steps used to calculate Mean Average Precision on test images using [this library](https://github.com/Cartucho/mAP#create-the-detection-results-files).
+Copied `_annotations.txt` from `Activities.v4-activitiesset2.0.yolokeras/test` folder
+Copied `Detection_Results.csv` from `TrainYourOwnYOLO/Data/Source_Images/Test_Image_Detection_Results` into `mAP/script/extras`
+
+`cd mAP/script/extras`
+
+Replaced all text in `mAP/script/extras/class_list` with `Activities.v4-activitiesset2.0.yolokeras/test/_classes.txt`
+
+To create ground truth mAP library format, ran script:
+`python convert_keras-yolo3.py --gt _annotations.txt`
+Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210502175851`
+Copied these files into `input/ground-truth/`
+
+To create detection result mAP library format, ran script:
+`python create-detection-results-txt-from-csv.py`
+This created a text file using Detection_Results.csv in YOLO Keras format: `detection_results.txt`
+Then ran script:
+`python convert_keras-yolo3.py --dr detection_results.txt`
+Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504104439`
+Copied these files into `input/detection-results/`
+
+Then ran mAP main script:
+`python main.py`
+
 ##### More info:
 - [example Colab](https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sharing) detecting person, getting box images, and running pose detector to label poses.
 
