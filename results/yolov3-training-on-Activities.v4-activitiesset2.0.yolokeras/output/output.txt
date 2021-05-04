@@ -1,0 +1,26 @@
+# AP and precision/recall per class
+45.27% = running AP 
+ Precision: ['1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '0.93', '0.94']
+ Recall :['0.03', '0.06', '0.09', '0.12', '0.15', '0.18', '0.21', '0.24', '0.27', '0.30', '0.33', '0.36', '0.39', '0.42', '0.42', '0.45']
+
+13.98% = standing AP 
+ Precision: ['1.00', '0.50', '0.67', '0.75', '0.80', '0.83']
+ Recall :['0.03', '0.03', '0.06', '0.10', '0.13', '0.16']
+
+26.15% = walking AP 
+ Precision: ['1.00', '0.50', '0.67', '0.75', '0.80']
+ Recall :['0.08', '0.08', '0.15', '0.23', '0.31']
+
+
+# mAP of all classes
+mAP = 28.47%
+
+# Number of ground-truth objects per class
+running: 33
+standing: 31
+walking: 13
+
+# Number of detected objects per class
+running: 16 (tp:15, fp:1)
+standing: 6 (tp:5, fp:1)
+walking: 5 (tp:4, fp:1)
