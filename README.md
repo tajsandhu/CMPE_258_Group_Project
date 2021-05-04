@@ -99,19 +99,23 @@ in case YOLO misses some images entirely:
 python intersect-gt-and-dr.py
 ```
 
-Then ran mAP main script:
+7. Then ran mAP main script:
 ```
 cd mAP
 python main.py
 ```
 
 Output:
+
 45.27% = running AP
+
 13.98% = standing AP
+
 26.15% = walking AP
+
 mAP = 28.47%
 
-Placed output graph in results folder.
+Placed output graph in [results](results) folder.
 
 ##### More info:
 - [example Colab](https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sharing) detecting person, getting box images, and running pose detector to label poses.
