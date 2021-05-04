@@ -74,7 +74,7 @@ Replaced all text in `mAP/script/extras/class_list` with `Activities.v4-activiti
 
 To create ground truth mAP library format, ran script:
 `python convert_keras-yolo3.py --gt _annotations.txt`
-Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210502175851`
+Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504112000`
 Copied these files into `input/ground-truth/`
 
 To create detection result mAP library format, ran script:
