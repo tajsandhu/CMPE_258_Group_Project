@@ -86,6 +86,7 @@ Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504
 Copied these files into `input/detection-results/`
 
 Then ran mAP main script:
+`cd mAP`
 `python main.py`
 
 ##### More info:
