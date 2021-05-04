@@ -41,7 +41,7 @@ You should get the following output:
 - results combined in a video in `TrainYourOwnYOLO/video.avi`
 
 ## Results
-Graph, video, and detected image results can be found in [results](results) folder.
+Graphs, video, and detected image results can be found in [results](results) folder.
 
 View graphs in TensorBoard.dev:
 - [YOLOv3 training on images in Activities.v4-activitiesset2.0.yolokeras](https://tensorboard.dev/experiment/OZ1Do5lxQ3ODDwD4Jduzmw/)
@@ -65,33 +65,53 @@ Then follow [these training instructions](yolov3-training.txt).
 
 ### Calculate mAP:
 These were the steps used to calculate Mean Average Precision on test images using [this library](https://github.com/Cartucho/mAP#create-the-detection-results-files).
-Copied `_annotations.txt` from `Activities.v4-activitiesset2.0.yolokeras/test` folder
-Copied `Detection_Results.csv` from `TrainYourOwnYOLO/Data/Source_Images/Test_Image_Detection_Results` into `mAP/script/extras`
+1. Copied `_annotations.txt` from `Activities.v4-activitiesset2.0.yolokeras/test` folder
+2. Copied `Detection_Results.csv` from `TrainYourOwnYOLO/Data/Source_Images/Test_Image_Detection_Results` into `mAP/script/extras`
 
 `cd mAP/script/extras`
 
-Replaced all text in `mAP/script/extras/class_list` with `Activities.v4-activitiesset2.0.yolokeras/test/_classes.txt`
+3. Replaced all text in `mAP/script/extras/class_list` with `Activities.v4-activitiesset2.0.yolokeras/test/_classes.txt`
 
-To create ground truth mAP library format, ran script:
-`python convert_keras-yolo3.py --gt _annotations.txt`
+4. To create ground truth mAP library format, ran script:
+```
+python convert_keras-yolo3.py --gt _annotations.txt
+```
 Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504112000`
+
 Copied these files into `input/ground-truth/`
 
-To create detection result mAP library format, ran script:
-`python create-detection-results-txt-from-csv.py`
+5. To create detection result mAP library format, ran script:
+```
+python create-detection-results-txt-from-csv.py
+```
 This created a text file using Detection_Results.csv in YOLO Keras format: `detection_results.txt`
 Then ran script:
-`python convert_keras-yolo3.py --dr detection_results.txt`
+```
+python convert_keras-yolo3.py --dr detection_results.txt
+```
 Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504104439`
+
 Copied these files into `input/detection-results/`
 
-Ran script to intersect ground-truth and detection-results files,
+6. Ran script to intersect ground-truth and detection-results files,
 in case YOLO misses some images entirely:
-`python intersect-gt-and-dr.py`
+```
+python intersect-gt-and-dr.py
+```
 
 Then ran mAP main script:
-`cd mAP`
-`python main.py`
+```
+cd mAP
+python main.py
+```
+
+Output:
+45.27% = running AP
+13.98% = standing AP
+26.15% = walking AP
+mAP = 28.47%
+
+Placed output graph in results folder.
 
 ##### More info:
 - [example Colab](https://colab.research.google.com/drive/1w-97X3vivhkl-bLhTFRI4b56ACK-G9Ui?usp=sharing) detecting person, getting box images, and running pose detector to label poses.
