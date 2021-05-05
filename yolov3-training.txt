@@ -1,0 +1,15 @@
+##### Training YOLOv3
+
+# make sure in right folder and activate virtual environment first
+cd TrainYourOwnYOLO
+conda activate yolov3-env
+
+cd ..
+cd 2_Training
+python Download_and_Convert_YOLO_weights.py
+python Train_YOLO.py 
+
+# finished training, now make predictions
+cd ..
+cd 3_Inference
+python Detector.py

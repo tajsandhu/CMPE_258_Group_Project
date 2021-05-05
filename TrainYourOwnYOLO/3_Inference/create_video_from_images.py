@@ -3,10 +3,10 @@ import os
 
 # Combine all files from detection results folder into a video.
 # Then display the video.
-# All files must be the same size.
+# All files must have the same extension and be the same size.
 
 image_folder = "../Data/Source_Images/Test_Image_Detection_Results"
-extension = ".png" # ".jpg"
+extension = ".jpg" # ".png"
 video_name = "../video.avi"
 WAIT_TIME_IN_MS = 1000
 
