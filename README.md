@@ -66,7 +66,7 @@ This creates a new file `data_train.txt` and prepends the absolute path of the t
 Then follow [these training instructions](yolov3-training.txt).
 
 ### Calculate mAP:
-These were the steps used to calculate Mean Average Precision on test images using [this library](https://github.com/Cartucho/mAP#create-the-detection-results-files).
+These were the steps used to calculate Mean Average Precision on test images using [this library](https://github.com/Cartucho/mAP).
 1. Copied `_annotations.txt` from `Activities.v5-activitiessetyolo.yolokeras/test` folder
 2. Copied `Detection_Results.csv` from `TrainYourOwnYOLO/Data/Source_Images/Test_Image_Detection_Results` into `mAP/script/extras`
 
