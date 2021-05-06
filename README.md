@@ -14,7 +14,7 @@ python Minimal_Example.py
 
 ##### Download trained YOLOv3 model
 Download the folder with trained YOLOv3 model from link below, unzip, and replace `TrainYourOwnYOLO/Data/Model_Weights` with it.
-- [trained on Activities.v5-activitiessetyolo.yolokeras](https://drive.google.com/file/d/1a4IKpRl0rWFes_2PTynfUuweXAc5w8Ex/view?usp=sharing)
+- [trained on Activities.v5-activitiessetyolo.yolokeras](https://drive.google.com/file/d/1sjlxVz6CDxbP3Sqz5k41UNIL-tAiVE-I/view?usp=sharing)
 
 ##### Dataset
 The folder [Activities.v5-activitiessetyolo.yolokeras](Activities.v5-activitiessetyolo.yolokeras) is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
@@ -45,6 +45,8 @@ Graphs, video, and detected image results can be found in [results](results) fol
 
 View graphs in TensorBoard.dev:
 - [YOLOv3 training on images in Activities.v5-activitiessetyolo.yolokeras](https://tensorboard.dev/experiment/OZ1Do5lxQ3ODDwD4Jduzmw/)
+
+---
 
 ## Development Instructions
 Follow setup instructions and run.
