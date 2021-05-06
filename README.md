@@ -14,10 +14,10 @@ python Minimal_Example.py
 
 ##### Download trained YOLOv3 model
 Download the folder with trained YOLOv3 model from link below, unzip, and replace `TrainYourOwnYOLO/Data/Model_Weights` with it.
-- [trained on Activities.v4-activitiesset2.0.yolokeras](https://drive.google.com/file/d/1a4IKpRl0rWFes_2PTynfUuweXAc5w8Ex/view?usp=sharing)
+- [trained on Activities.v5-activitiessetyolo.yolokeras](https://drive.google.com/file/d/1a4IKpRl0rWFes_2PTynfUuweXAc5w8Ex/view?usp=sharing)
 
 ##### Dataset
-The folder [Activities.v4-activitiesset2.0.yolokeras](Activities.v4-activitiesset2.0.yolokeras) is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
+The folder [Activities.v5-activitiessetyolo.yolokeras](Activities.v5-activitiessetyolo.yolokeras) is from the [MPII human pose dataset](http://human-pose.mpi-inf.mpg.de/#overview). 
 It is labeled with bounding boxes using [Roboflow exported as Keras YOLO txt format](https://roboflow.com/formats/yolo-keras-txt).
 
 Create a new folder `TrainYourOwnYOLO/Data/Source_Images/Test_Images`.
@@ -44,13 +44,13 @@ You should get the following output:
 Graphs, video, and detected image results can be found in [results](results) folder.
 
 View graphs in TensorBoard.dev:
-- [YOLOv3 training on images in Activities.v4-activitiesset2.0.yolokeras](https://tensorboard.dev/experiment/OZ1Do5lxQ3ODDwD4Jduzmw/)
+- [YOLOv3 training on images in Activities.v5-activitiessetyolo.yolokeras](https://tensorboard.dev/experiment/OZ1Do5lxQ3ODDwD4Jduzmw/)
 
 ## Development Instructions
 Follow setup instructions and run.
 
 #### Training
-The dataset [Activities.v4-activitiesset2.0.yolokeras](Activities.v4-activitiesset2.0.yolokeras) is used to train YOLOv3.
+The dataset [Activities.v5-activitiessetyolo.yolokeras](Activities.v5-activitiessetyolo.yolokeras) is used to train YOLOv3.
 If want to train manually, follow below steps:
 ##### Copy train files and images to YOLOv3 folder
 1. Copy-paste `train` folder into `TrainYourOwnYOLO/Data/Source_Images/Training_Images`
@@ -65,12 +65,12 @@ Then follow [these training instructions](yolov3-training.txt).
 
 ### Calculate mAP:
 These were the steps used to calculate Mean Average Precision on test images using [this library](https://github.com/Cartucho/mAP#create-the-detection-results-files).
-1. Copied `_annotations.txt` from `Activities.v4-activitiesset2.0.yolokeras/test` folder
+1. Copied `_annotations.txt` from `Activities.v5-activitiessetyolo.yolokeras/test` folder
 2. Copied `Detection_Results.csv` from `TrainYourOwnYOLO/Data/Source_Images/Test_Image_Detection_Results` into `mAP/script/extras`
 
 `cd mAP/script/extras`
 
-3. Replaced all text in `mAP/script/extras/class_list` with `Activities.v4-activitiesset2.0.yolokeras/test/_classes.txt`
+3. Replaced all text in `mAP/script/extras/class_list` with `Activities.v5-activitiessetyolo.yolokeras/test/_classes.txt`
 
 4. To create ground truth mAP library format, ran script:
 ```

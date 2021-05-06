@@ -4,7 +4,6 @@
 cd TrainYourOwnYOLO
 conda activate yolov3-env
 
-cd ..
 cd 2_Training
 python Download_and_Convert_YOLO_weights.py
 python Train_YOLO.py 
