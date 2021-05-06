@@ -78,7 +78,7 @@ These were the steps used to calculate Mean Average Precision on test images usi
 ```
 python convert_keras-yolo3.py --gt _annotations.txt
 ```
-Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504112000`
+Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210506001617`
 
 Copied these files into `input/ground-truth/`
 
@@ -91,7 +91,7 @@ Then ran script:
 ```
 python convert_keras-yolo3.py --dr detection_results.txt
 ```
-Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210504104439`
+Output files were created in `mAP/scripts/extra/from_kerasyolo3/version_20210506001906`
 
 Copied these files into `input/detection-results/`
 
