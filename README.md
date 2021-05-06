@@ -44,7 +44,7 @@ You should get the following output:
 Graphs, video, and detected image results can be found in [results](results) folder.
 
 View graphs in TensorBoard.dev:
-- [YOLOv3 training on images in Activities.v5-activitiessetyolo.yolokeras](https://tensorboard.dev/experiment/OZ1Do5lxQ3ODDwD4Jduzmw/)
+- [YOLOv3 training on images in Activities.v5-activitiessetyolo.yolokeras](https://tensorboard.dev/experiment/Lz6ELxUnSey4cYvxl8kU4w/)
 
 ---
 

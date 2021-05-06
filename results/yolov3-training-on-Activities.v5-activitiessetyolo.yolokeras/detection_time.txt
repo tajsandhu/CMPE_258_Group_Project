@@ -1,0 +1,208 @@
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Model_Weights\trained_weights_final.h5 model, anchors, and classes loaded in 12.40sec.
+Found 3 input labels: ['running', 'standing', 'walking'] ...
+Found 28 input images: ['000881483_jpg.rf.8f9e7426d6a9fe5cd6be36411b391e80.jpg', '016095549_jpg.rf.919897778b1db1f53112925940005e8a.jpg', '016481482_jpg.rf.fb8ca78d179526b92d38a4b7f5aefb47.jpg', '018923531_jpg.rf.72392ce262e33a4e4b9db82509353b6e.jpg', '022675862_jpg.rf.13c7e04eeae0dee11f2ccaa19b92e6d3.jpg'] ...
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\000881483_jpg.rf.8f9e7426d6a9fe5cd6be36411b391e80.jpg
+(416, 416, 3)
+2021-05-05 23:51:37.085795: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:581] remapper failed: Invalid argument: Subshape must have computed start >= end since stride is negative, but is 0 and 2 (computed from start 0 and end 9223372036854775807 over shape with rank 2 and stride-1)
+2021-05-05 23:51:37.421653: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:581] remapper failed: Invalid argument: Subshape must have computed start >= end since stride is negative, but is 0 and 2 (computed from start 0 and end 9223372036854775807 over shape with rank 2 and stride-1)
+Found 1 boxes for img
+walking 0.79 (217, 136) (285, 285)
+Time spent: 2.409sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\016095549_jpg.rf.919897778b1db1f53112925940005e8a.jpg
+(416, 416, 3)
+Found 2 boxes for img
+walking 0.77 (174, 171) (213, 273)
+running 0.30 (167, 176) (218, 274)
+Time spent: 0.586sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\016481482_jpg.rf.fb8ca78d179526b92d38a4b7f5aefb47.jpg
+(416, 416, 3)
+Found 7 boxes for img
+standing 0.35 (93, 128) (197, 364)
+standing 0.36 (387, 160) (416, 261)
+standing 0.50 (20, 156) (40, 232)
+standing 0.52 (291, 110) (360, 387)
+standing 0.53 (52, 130) (155, 369)
+standing 0.54 (208, 165) (297, 338)
+standing 0.82 (166, 153) (238, 353)
+Time spent: 0.592sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\018923531_jpg.rf.72392ce262e33a4e4b9db82509353b6e.jpg
+(416, 416, 3)
+Found 2 boxes for img
+running 0.41 (195, 111) (274, 346)
+running 0.99 (65, 107) (210, 319)
+Time spent: 0.581sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\022675862_jpg.rf.13c7e04eeae0dee11f2ccaa19b92e6d3.jpg
+(416, 416, 3)
+Found 5 boxes for img
+standing 0.43 (163, 131) (195, 323)
+standing 0.53 (129, 120) (178, 335)
+running 0.49 (184, 103) (271, 338)
+running 0.82 (74, 154) (133, 305)
+running 0.88 (307, 123) (368, 286)
+Time spent: 0.579sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\023660978_jpg.rf.609abe9e2870c653994d46f72d5b1ade.jpg
+(416, 416, 3)
+Found 5 boxes for img
+walking 0.46 (16, 155) (43, 226)
+standing 0.27 (16, 155) (43, 226)
+standing 0.75 (93, 155) (116, 213)
+standing 0.82 (72, 145) (93, 219)
+running 0.92 (139, 154) (183, 248)
+Time spent: 0.615sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\025425240_jpg.rf.68da1883be0a0e9e4f395de111944506.jpg
+(416, 416, 3)
+Found 1 boxes for img
+running 0.90 (146, 131) (186, 255)
+Time spent: 0.588sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\026903355_jpg.rf.21ed6da1aca1fb544b901def84adba7b.jpg
+(416, 416, 3)
+Found 2 boxes for img
+running 0.59 (220, 105) (299, 344)
+running 0.98 (71, 81) (191, 353)
+Time spent: 0.551sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\028721257_jpg.rf.cb5165320676deed73072056cdd6deb3.jpg
+(416, 416, 3)
+Found 7 boxes for img
+walking 0.37 (39, 191) (72, 283)
+walking 0.60 (75, 178) (129, 291)
+walking 0.75 (317, 186) (360, 284)
+walking 0.79 (142, 187) (185, 279)
+walking 0.93 (211, 144) (275, 321)
+standing 0.29 (75, 178) (129, 291)
+standing 0.51 (39, 191) (72, 283)
+Time spent: 0.671sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\032346733_jpg.rf.ae77630914f626339b373c23a114b7e4.jpg
+(416, 416, 3)
+Found 1 boxes for img
+running 0.96 (174, 120) (352, 318)
+Time spent: 0.571sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\039153710_jpg.rf.18f0cac070e2b9d47982fcd21494cfc3.jpg
+(416, 416, 3)
+Found 4 boxes for img
+walking 0.31 (95, 135) (167, 318)
+walking 0.53 (165, 112) (244, 325)
+standing 0.25 (175, 108) (240, 331)
+standing 0.42 (103, 127) (160, 317)
+Time spent: 0.589sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\039515530_jpg.rf.c333ae2f47325eab1683357d3e51116a.jpg
+(416, 416, 3)
+Found 1 boxes for img
+running 0.89 (103, 129) (226, 314)
+Time spent: 0.592sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\042550566_jpg.rf.cfb50bf829be53f6b1db8522de4d77a3.jpg
+(416, 416, 3)
+Found 6 boxes for img
+standing 0.33 (197, 158) (267, 304)
+standing 0.41 (54, 115) (88, 280)
+standing 0.43 (280, 142) (315, 268)
+standing 0.84 (27, 114) (74, 290)
+standing 0.93 (307, 146) (350, 287)
+running 0.67 (197, 158) (267, 304)
+Time spent: 0.601sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\044527912_jpg.rf.bd1dbafa09eace37e0e1cd239244fed0.jpg
+(416, 416, 3)
+Found 1 boxes for img
+running 0.97 (175, 119) (236, 306)
+Time spent: 0.607sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\059901104_jpg.rf.b358c1832e0227d9312f2b1bd446cac3.jpg
+(416, 416, 3)
+Found 7 boxes for img
+standing 0.61 (179, 144) (216, 296)
+standing 0.68 (260, 140) (309, 285)
+standing 0.80 (206, 116) (266, 320)
+running 0.65 (254, 110) (313, 302)
+running 0.71 (143, 133) (184, 309)
+running 0.95 (36, 161) (87, 295)
+running 0.97 (77, 149) (125, 305)
+Time spent: 0.632sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\062234326_jpg.rf.f71980a0d5830e7d77f93f310ac11d20.jpg
+(416, 416, 3)
+Found 1 boxes for img
+walking 0.91 (199, 134) (255, 227)
+Time spent: 0.594sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\063629135_jpg.rf.d9304a4d9b7c231c5a5b193cbabd065a.jpg
+(416, 416, 3)
+Found 6 boxes for img
+standing 0.52 (169, 123) (222, 341)
+standing 0.70 (119, 191) (172, 326)
+standing 0.72 (223, 185) (280, 353)
+standing 0.76 (317, 194) (375, 366)
+standing 0.81 (279, 220) (318, 352)
+standing 0.92 (14, 160) (61, 295)
+Time spent: 0.613sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\069574869_jpg.rf.7045b6afd8667a4acea8f560da0d3be9.jpg
+(416, 416, 3)
+Found 1 boxes for img
+running 0.96 (192, 112) (295, 315)
+Time spent: 0.568sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\071556964_jpg.rf.30fbf49af28aa0fbf6c5b780ce3de26d.jpg
+(416, 416, 3)
+Found 2 boxes for img
+running 0.56 (206, 137) (293, 317)
+running 0.98 (45, 76) (175, 338)
+Time spent: 0.586sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\072763114_jpg.rf.f114575ec4f1f0e69375622a855df511.jpg
+(416, 416, 3)
+Found 2 boxes for img
+running 0.78 (161, 176) (196, 278)
+running 0.81 (118, 187) (154, 266)
+Time spent: 0.589sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\074837525_jpg.rf.629b9ef6558cd5b7334ae90abdb78db1.jpg
+(416, 416, 3)
+Found 5 boxes for img
+standing 0.65 (6, 110) (79, 317)
+standing 0.92 (84, 110) (135, 301)
+running 0.65 (327, 161) (351, 232)
+running 0.66 (192, 141) (242, 259)
+running 0.77 (137, 91) (220, 324)
+Time spent: 0.573sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\078665252_jpg.rf.03157216fabbc64a70f220ce0eb03ddf.jpg
+(416, 416, 3)
+Found 1 boxes for img
+walking 0.85 (133, 132) (178, 260)
+Time spent: 0.594sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\083248947_jpg.rf.0351605c228d35094bb0c748eb3cf31c.jpg
+(416, 416, 3)
+Found 9 boxes for img
+walking 0.36 (247, 153) (283, 249)
+walking 0.47 (280, 125) (382, 314)
+standing 0.31 (96, 151) (117, 219)
+standing 0.31 (170, 141) (195, 213)
+standing 0.36 (136, 145) (157, 198)
+standing 0.57 (105, 140) (130, 229)
+standing 0.62 (7, 155) (30, 233)
+standing 0.64 (247, 153) (283, 249)
+standing 0.65 (209, 107) (242, 281)
+Time spent: 0.596sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\084466591_jpg.rf.3dcf5edba5c7abe6aeb0f7fa37fa96f2.jpg
+(416, 416, 3)
+Found 1 boxes for img
+running 0.98 (173, 173) (231, 314)
+Time spent: 0.584sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\086989636_jpg.rf.92a511ad74c2c26902288ec28e0740d9.jpg
+(416, 416, 3)
+Found 3 boxes for img
+walking 0.65 (275, 153) (340, 318)
+walking 0.73 (198, 121) (261, 332)
+walking 0.88 (104, 144) (173, 326)
+Time spent: 0.600sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\093149039_jpg.rf.5c96cbce06ec021ce34e31184c156160.jpg
+(416, 416, 3)
+Found 4 boxes for img
+running 0.74 (266, 160) (365, 330)
+running 0.82 (193, 179) (271, 310)
+running 0.85 (75, 175) (142, 316)
+running 0.91 (139, 176) (187, 320)
+Time spent: 0.589sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\093286769_jpg.rf.bd59dbe295ee10c3a59ffd601da6b410.jpg
+(416, 416, 3)
+Found 2 boxes for img
+walking 0.53 (221, 151) (262, 254)
+walking 0.61 (161, 64) (231, 299)
+Time spent: 0.600sec
+C:\Users\mdhsi\OneDrive\Documents\Github\CMPE_258_Group_Project\TrainYourOwnYOLO\Data\Source_Images\Test_Images\095776666_jpg.rf.14a3099e4800e65c96505f18acce4cca.jpg
+(416, 416, 3)
+Found 1 boxes for img
+running 0.34 (91, 169) (179, 368)
+Time spent: 0.584sec
+Processed 28 images in 19.1sec - 1.5FPS
