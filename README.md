@@ -114,3 +114,7 @@ Copied output folder to [results](results) folder.
 
 ## Architecture
 ![architecture diagram](architecture-pedestrian-behavior-analysis.png)
+
+## References
+- [TrainYourOwnYOLO](https://github.com/AntonMu/TrainYourOwnYOLO)
+- [YOLO](https://arxiv.org/abs/1506.02640)
